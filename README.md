@@ -1,4 +1,4 @@
-```
+
 # CSS Sprite Generator - CLI Tool
 
 This project is a PHP command-line tool for generating CSS sprites from images in a directory. It offers several options for customization and supports recursive directory scanning.
