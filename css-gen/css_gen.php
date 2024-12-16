@@ -82,21 +82,26 @@ function cssGen($fileCss= "style.css")
 \theight: ".$height."px;";	
         }
         
-		$cssContent.=" \n\tbackground-position:".-$xoffset."px".", 0px;\n";
-		$cssContent.=" \tflex-shrink:"."0;"."\n";
         if ( $h && $i/3+1>1 && (isset($options['p'])) || isset($options["padding"] ) ){
-            $cssContent.="\tmargin-left:".($options['p']??$options["padding"])."px;"."\n}\n";
+            $cssContent.="\n\tbackground-position:".$xoffset+($options['p']??$options["padding"])."px".", 0px;\n";
+            $cssContent.="\tflex-shrink:"."0;"."\n";
+            $cssContent.="\tmargin-left: ".($options['p']??$options["padding"])."px;"."\n}\n";
             
         }
         if( $v && $i/3+1>1 && (isset($options['p'])) || isset($options["padding"]) ){
+            $cssContent.="\n\tbackground-position:".-$xoffset-($options['p']??$options["padding"])."px".", 0px;\n";
             $cssContent.="\tmargin-top:".($options['p']??$options["padding"])."px;"."\n}\n";
         }
-        elseif($i/3+1==1){
-            
-            $cssContent.="}\n";
+        elseif(($i/3+1==1) && $v){    
+            $cssContent.="\n\tbackground-position:".-$xoffset."px".", 0px;\n";
+            $cssContent.="\n}\n";
+        }
+        elseif(($i/3+1==1) && $h){    
+            $cssContent.="\n\tbackground-position:".$xoffset."px".", 0px;\n";
+            $cssContent.="\n}\n";
         }
         else {
-            if (!isset($options['o']) && !isset($options["override-size"])){
+            if ( (!isset($options['o']) && !isset($options["override-size"])) && !$h ){
                 $cssContent.="}\n";
             }
         }
