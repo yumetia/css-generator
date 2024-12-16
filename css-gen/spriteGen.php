@@ -53,7 +53,11 @@ function spriteGenVer($path,$options,$spriteName="sprite.png",$padding=0){
 		if (!isset($options['c'])&&!isset($options["columns_number"])){
 			$widthS = $tabDimMax["maxWidth"];
 			$heightS = $tabDimMax["totalHeight"] ;
-		} 
+		}
+		// if theres no images in the current dir, return directly before creating a sprite
+		if ($widthS==0){
+			return "\nSorry, I cannot work..\nTheres no images in the current directory.\n";
+		}
 	}
 
 
@@ -174,6 +178,10 @@ function spriteGenHor($path,$options,$spriteName="sprite.png",$padding=0){
 			$widthS = $tabDimMax["totalWidth"];
 			$heightS = $tabDimMax["maxHeight"] ;
 		} 
+		// if theres no images in the current dir, return directly before creating a sprite
+		if ($widthS==0){
+			return "\nSorry, I cannot work..\nTheres no images in the current directory.\n";
+		}
 	}
 
 	$paddingMax = $padding * count($imgTabScan);
