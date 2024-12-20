@@ -19,4 +19,3 @@ To make testing easier for users who might not have images readily available or 
 ### Prerequisites
 - **PHP** version 7.4 or higher.
 - A terminal or command-line interface to execute the script.
-# css-generator
