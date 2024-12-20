@@ -1,0 +1,91 @@
+
+------------------------------
+HELP FOR THE CLI SCRIPT
+------------------------------
+
+This script handles options passed via the command line using PHP's `getopt()` function. 
+Below are the available options and their usage:
+
+---------------------------------
+---------------------------------
+WARNING : 
+The project is basically to create a sprite.png file so :
+
+Please name ur file (if wanted) as : [name].png 
+
+If u wanna name it differently (jpg for exemple), it will work, but keep in mind that the real type of that file is png.
+-----------------------------
+---------------------------
+
+SHORT OPTIONS
+------------------------------
+-r : Recursive option. Concatenate also images found inside the directories. 
+
+-i [IMAGE] : Optional. Change the name of the "sprite".png. If empty, the default name is : sprite.png.
+
+-s [STYLE] : Optional. Change the name of the "style".css. If empty, the default name is : style.css.
+
+-p [NUMBER] : Optional. Add padding between images of NUMBER pixels.
+
+-o [SIZE] : Optional. Force each images of the sprite to fit a size of SIZExSIZE pixels.
+
+-c [NUMBER] Optional. The maximum number of elements to be generated horizontally.
+
+------------------------------
+LONG OPTIONS
+------------------------------
+
+--help : Displays this help guide.
+
+--recursive : Recursive option. Also concatenate to the sprite images found inside the directories.
+
+--output-image :  Optional. Change the name of the "sprite".png. If empty, the default name is : sprite.png.
+
+--output-style :  Optional. Change the name of the "style".css. If empty, the default name is : style.css.
+
+--padding : Optional. Add padding between images of NUMBER pixels.
+
+--override-size : Optional. Force each images of the sprite to fit a size of SIZExSIZE pixels.
+
+--columns_number=NUMBER : Optional. The maximum number of elements to be generated horizontally.
+
+------------------------------
+USAGE EXAMPLES
+------------------------------
+1. Provide a required value for the sprite file:
+ php css_gen.php -i foo.png
+
+2. Provide all options:
+ php css_gen.php -r -i foo.png -s foo.css 
+
+3. Display help:
+ php script.php --help
+
+------------------------------
+NOTES
+------------------------------
+- Long options must be prefixed with `--`.
+
+- Short options must be prefixed with a single dash `-`.
+
+- If an option requires a value, it should be specified immediately after the option (either with a space or `=`).
+
+**IMPORTANT** :  
+When generating the CSS, an option allows you to define the background color for the `body`.
+
+- **If you specify the color by its name** (e.g., `red`, `blue`, etc.), the case (uppercase/lowercase) will be ignored. You can input the color name in any format.  
+- **If you specify the color in hexadecimal format** (e.g., `#FFAA00`), it is mandatory to use **uppercase letters** and include the `#` symbol. 
+
+Example of valid input: `#FFAABB`. 
+Invalid example: `#ffaa00`.
+
+This distinction is necessary to ensure compatibility with the generator.
+
+------------------------------
+CONTACT
+------------------------------
+
+For any questions or issues, contact the author via:  
+GitHub: https://github.com/yumetia
+
+-------------------------------
